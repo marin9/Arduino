@@ -3,11 +3,11 @@
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
 
-#define BZ      2
-#define BTN_S   4   
-#define BTN_M   5
-#define BTN_P   6
-#define SW_A    7
+#define BZ      3
+#define BTN_S   6   
+#define BTN_M   9
+#define BTN_P   12
+#define SW_A    2
 
 #define ST_ALARM  0
 #define ST_IDLE   1
@@ -36,6 +36,8 @@ void setup() {
   pinMode(BTN_M, INPUT_PULLUP);
   pinMode(BTN_P, INPUT_PULLUP);
   digitalWrite(BZ, LOW);
+  pinMode(A2, OUTPUT);
+  digitalWrite(A2, HIGH);
 
   oled.begin(SSD1306_SWITCHCAPVCC, 0x3C);
   oled.clearDisplay();
